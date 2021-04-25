@@ -9,15 +9,27 @@ import (
 )
 
 func Login(c *gin.Context) {
-	c.HTML(http.StatusOK, "login.html", nil)
-}
-
-func SignUp(c *gin.Context) {
 	var person model.Person
 	c.Bind(person)
-	if logic.IsInputPersonOK(person) == false {
+	if logic.IsInputAccountOK(person) == false {
 		c.JSON(http.StatusBadRequest, nil)
 	}
+	if logic.HasAccount(person) == false {
+		c.JSON(http.StatusBadRequest, nil)
+	}
+	c.JSON(http.StatusOK, nil)
+}
+
+func Register(c *gin.Context) {
+	var person model.Person
+	c.Bind(person)
+	if logic.IsRegisterPersonOK(person) == false {
+		c.JSON(http.StatusBadRequest, nil)
+	}
+	if logic.CreatePerson(person) == false {
+		c.JSON(http.StatusBadRequest, nil)
+	}
+	c.JSON(http.StatusOK, nil)
 }
 
 func GetUser(c *gin.Context) {

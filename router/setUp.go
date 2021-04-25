@@ -18,6 +18,8 @@ func SetUp() *gin.Engine {
 	api := r.Group("/api")
 	{
 		api.GET("/getUser", controller.GetUser)
+		api.POST("/register", controller.Register)
+		api.POST("/login", controller.Login)
 	}
 
 	return r

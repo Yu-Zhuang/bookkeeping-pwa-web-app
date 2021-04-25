@@ -1,6 +1,6 @@
-const login = async () => {
+const register = async () => {
     const data = await getData()
-    const res = await fetch((hostUrl + 'api/login'), {
+    const res = await fetch((hostUrl + 'api/register'), {
         method: 'POST',
         body: data,
         headers: {
@@ -21,9 +21,18 @@ const login = async () => {
 function getData() {
     id = String(document.getElementById("id").value)
     psd = String(document.getElementById("password").value)
+    cpsd = String(document.getElementById("checkPassword").value)
+    _name = String(document.getElementById("name").value)
+    email = String(document.getElementById("email").value)
+
+    if (psd != cpsd) {
+        return null, false
+    }
     ret = {
             "id": id,
-            "password": psd
-        }
-    return JSON.stringify(ret)
+            "password": psd,
+            "name": _name,
+            "email": email
+    }
+    return JSON.stringify(ret), true
 }
