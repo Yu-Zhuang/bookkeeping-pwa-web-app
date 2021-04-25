@@ -15,5 +15,10 @@ func SetUp() *gin.Engine {
 	r.GET("/", controller.HTMLhandler)
 	r.GET("/:page", controller.HTMLhandler)
 
+	api := r.Group("/api")
+	{
+		api.GET("/getUser", controller.GetUser)
+	}
+
 	return r
 }

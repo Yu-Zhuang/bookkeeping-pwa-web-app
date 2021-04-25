@@ -1,6 +1,8 @@
 package controller
 
 import (
+	"bookkeeping/logic"
+	"bookkeeping/model"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -11,5 +13,15 @@ func Login(c *gin.Context) {
 }
 
 func SignUp(c *gin.Context) {
-	c.HTML(http.StatusOK, "signup.html", nil)
+	var person model.Person
+	c.Bind(person)
+	if logic.IsInputPersonOK(person) == false {
+		c.JSON(http.StatusBadRequest, nil)
+	}
+}
+
+func GetUser(c *gin.Context) {
+	c.JSON(http.StatusUnauthorized, gin.H{
+		"msg": "none",
+	})
 }
