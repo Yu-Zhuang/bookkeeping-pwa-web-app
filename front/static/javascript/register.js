@@ -29,7 +29,7 @@ function getData() {
         alert("密碼與確認密碼不符") 
         window.location.href = hostUrl + "register"            
     }
-    if (id == "" || pas == "" || _name == "" || email == "") {
+    if (id == "" || psd== "" || _name == "" || email == "") {
         alert("填寫不完全")
         window.location.href = hostUrl + "register"  
     }
