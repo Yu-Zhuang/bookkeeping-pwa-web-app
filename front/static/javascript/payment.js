@@ -1,19 +1,5 @@
 async function addPayment() {
-    date = String(document.getElementById("date").value)
-    _class = String(document.getElementById("class").value)
-    payment = String(document.getElementById("payment").value)
-    remark = String(document.getElementById("remark").value)
-    if (date == "" || _class == "" || payment == "" || remark == "") {
-        alert("尚未填寫完整")
-        return
-    }
-    // payment remark class
-    data = {
-            "date": date,
-            "class": _class,
-            "payment": payment,
-            "remark": remark
-    }
+    const data = await getData()
     const res = await fetch((hostUrl + 'api/addPayment'), {
         method: 'POST',
         body: data,
@@ -30,4 +16,23 @@ async function addPayment() {
         alert("新增失敗") 
         window.location.href = hostUrl + "payment"            
     }    
+}
+
+function getData() {
+    date = String(document.getElementById("date").value)
+    _class = String(document.getElementById("class").value)
+    payment = String(document.getElementById("payment").value)
+    remark = String(document.getElementById("remark").value)
+    if (date == "" || _class == "" || payment == "" || remark == "") {
+        alert("尚未填寫完整")
+        return
+    }
+    // payment remark class
+    data = {
+            "date": date,
+            "class": _class,
+            "payment": payment,
+            "remark": remark
+    }
+    return JSON.stringify(ret)
 }
