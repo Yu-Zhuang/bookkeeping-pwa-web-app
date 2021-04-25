@@ -13,8 +13,8 @@ const register = async () => {
         return
     }
     else {
-        alert("錯誤的帳號密碼") 
-        window.location.href = hostUrl + "login"            
+        alert("申請失敗") 
+        window.location.href = hostUrl + "register"            
     }
     return
 }

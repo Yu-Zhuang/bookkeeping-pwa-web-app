@@ -13,9 +13,11 @@ func Login(c *gin.Context) {
 	c.Bind(person)
 	if logic.IsInputAccountOK(person) == false {
 		c.JSON(http.StatusBadRequest, nil)
+		return
 	}
 	if logic.HasAccount(person) == false {
 		c.JSON(http.StatusBadRequest, nil)
+		return
 	}
 	c.JSON(http.StatusOK, nil)
 }
@@ -24,10 +26,16 @@ func Register(c *gin.Context) {
 	var person model.Person
 	c.Bind(person)
 	if logic.IsRegisterPersonOK(person) == false {
-		c.JSON(http.StatusBadRequest, nil)
+		c.JSON(http.StatusBadRequest, gin.H{
+			"msg": "IsRegisterPersonOK == false",
+		})
+		return
 	}
 	if logic.CreatePerson(person) == false {
-		c.JSON(http.StatusBadRequest, nil)
+		c.JSON(http.StatusBadRequest, gin.H{
+			"msg": "CreatePerson == false",
+		})
+		return
 	}
 	c.JSON(http.StatusOK, nil)
 }
