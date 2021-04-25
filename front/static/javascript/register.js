@@ -1,5 +1,9 @@
 const register = async () => {
-    const data = await getData()
+    const data, ok = await getData()
+    if (ok == false) {
+        alert('wrong input')
+        return
+    }
     const res = await fetch((hostUrl + 'api/register'), {
         method: 'POST',
         body: data,
