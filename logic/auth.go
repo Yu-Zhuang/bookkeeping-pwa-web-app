@@ -2,6 +2,7 @@ package logic
 
 import (
 	"bookkeeping/config"
+	"bookkeeping/dao"
 	"bookkeeping/model"
 	"fmt"
 	"unicode"
@@ -33,6 +34,28 @@ func IsRegisterPersonOK(p model.Person) bool {
 		return true
 	}
 	fmt.Println("account has word which not belong number and alphabat")
+	return false
+}
+
+func HasPersonByID(id string) bool {
+	sql_statement := "SELECT COUNT(id) FROM person WHERE id=$1;"
+	rows, err := dao.PostgresDB.Query(sql_statement, id)
+	if err != nil {
+		fmt.Println(err.Error())
+		return false
+	}
+	defer rows.Close()
+
+	var count int
+	for rows.Next() {
+		if err := rows.Scan(&count); err != nil {
+			fmt.Println(err.Error())
+		}
+	}
+	if count > 0 {
+		fmt.Println("has account : ", id)
+		return true
+	}
 	return false
 }
 

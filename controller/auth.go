@@ -1,6 +1,7 @@
 package controller
 
 import (
+	"bookkeeping/config"
 	"bookkeeping/logic"
 	"bookkeeping/model"
 	"fmt"
@@ -20,6 +21,8 @@ func Login(c *gin.Context) {
 		c.JSON(http.StatusBadRequest, nil)
 		return
 	}
+	tokenString, _ := logic.GenToken(person.ID, config.TokenExpireDuration)
+	c.SetCookie(config.AuthCookieName, tokenString, config.AuthExpireDuration, "/", config.HostUrl, true, true)
 	c.JSON(http.StatusOK, nil)
 }
 
@@ -44,7 +47,27 @@ func Register(c *gin.Context) {
 }
 
 func GetUser(c *gin.Context) {
-	c.JSON(http.StatusUnauthorized, gin.H{
-		"msg": "none",
+	authCookie, err := c.Cookie(config.AuthCookieName)
+	if err != nil {
+		c.JSON(http.StatusUnauthorized, nil)
+		c.Abort()
+		return
+	}
+	mc, err := logic.ParseToken(authCookie)
+	if err != nil {
+		c.JSON(http.StatusUnauthorized, nil)
+		c.Abort()
+		return
+	}
+	ok := logic.HasPersonByID(mc.Username)
+	if ok == false {
+		c.JSON(http.StatusUnauthorized, nil)
+		c.Abort()
+		return
+	}
+	c.JSON(http.StatusOK, gin.H{
+		"msg": mc.Username,
 	})
+	// c.Set(conf.AuthMidUserNameKey, mc.Username)
+	// c.Next()
 }
