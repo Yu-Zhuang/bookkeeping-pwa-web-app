@@ -37,7 +37,7 @@ func CreatePerson(p model.Person) bool {
 
 func HasAccount(p model.Person) bool {
 	p.Password = Sha1Hash(p.Password)
-	sql_statement := "SELECT id, password FROM person WHERE id=$1 AND password=$2;"
+	sql_statement := "SELECT COUNT(id) FROM person WHERE id=$1 AND password=$2;"
 	rows, err := dao.PostgresDB.Query(sql_statement, p.ID, p.Password)
 	if err != nil {
 		fmt.Println(err.Error())
