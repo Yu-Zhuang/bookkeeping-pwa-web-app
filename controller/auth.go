@@ -11,7 +11,7 @@ import (
 
 func Login(c *gin.Context) {
 	var person model.Person
-	c.Bind(person)
+	c.Bind(&person)
 	if logic.IsInputAccountOK(person) == false {
 		c.JSON(http.StatusBadRequest, nil)
 		return
@@ -25,7 +25,7 @@ func Login(c *gin.Context) {
 
 func Register(c *gin.Context) {
 	var person model.Person
-	c.Bind(person)
+	c.Bind(&person)
 	if logic.IsRegisterPersonOK(person) == false {
 		fmt.Println("IsRegisterPersonOK == false")
 		c.JSON(http.StatusBadRequest, gin.H{
