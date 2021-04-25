@@ -28,7 +28,7 @@ function getData() {
         return
     }
     // payment remark class
-    data = {
+    ret = {
             "date": date,
             "class": _class,
             "payment": payment,
