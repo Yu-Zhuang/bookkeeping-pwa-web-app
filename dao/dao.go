@@ -29,7 +29,7 @@ func InitDB() bool {
 		log.Fatal(err)
 		return false
 	}
-	if _, err := PostgresDB.Exec("CREATE TABLE IF NOT EXISTS person (id VARCHAR(20) PRIMARY KEY, name VARCHAR(20), password VARCHAR(20), email VARCHAR(60));"); err != nil {
+	if _, err := PostgresDB.Exec("CREATE TABLE IF NOT EXISTS person (id VARCHAR(20) PRIMARY KEY, name VARCHAR(20), password VARCHAR(50), email VARCHAR(60));"); err != nil {
 		log.Fatal(err)
 		return false
 	}
