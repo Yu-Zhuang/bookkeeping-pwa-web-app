@@ -7,8 +7,8 @@ const login = async () => {
             'Content-Type':'application/json'
         }
     })
-    //const myJson = await res.json()
     if (res.status == 200) {
+        alert("登入成功!") 
         window.location.href = hostUrl
         return
     }

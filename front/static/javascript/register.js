@@ -7,9 +7,9 @@ const register = async () => {
             'Content-Type':'application/json'
         }
     })
-    //const myJson = await res.json()
     if (res.status == 200) {
-        window.location.href = hostUrl
+        alert("申請成功!") 
+        window.location.href = hostUrl + "login"
         return
     }
     else {
