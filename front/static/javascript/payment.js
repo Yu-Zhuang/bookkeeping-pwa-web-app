@@ -28,6 +28,6 @@ async function addPayment() {
     }
     else {
         alert("新增失敗") 
-        window.location.href = hostUrl + "/payment"            
+        window.location.href = hostUrl + "payment"            
     }    
 }
