@@ -1,0 +1,17 @@
+.chart {
+    display: block;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.linechart {
+    display: block;
+    margin: auto auto;
+    padding-top: 20px;
+    width: 90%;
+}
+.piechart {
+    display: block;
+    margin: auto auto;
+    padding-top: 20px;
+    width: 80%;
+}
