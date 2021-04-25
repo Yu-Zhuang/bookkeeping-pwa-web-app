@@ -20,6 +20,7 @@ func SetUp() *gin.Engine {
 		api.GET("/getUser", controller.GetUser)
 		api.POST("/register", controller.Register)
 		api.POST("/login", controller.Login)
+		api.POST("/addPayment", controller.AddPayment)
 	}
 
 	return r

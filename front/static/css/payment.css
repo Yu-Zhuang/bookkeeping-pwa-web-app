@@ -1,0 +1,36 @@
+.label{
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    background-color: #aaa;
+}
+.wrap{
+    margin: 10px auto;
+    display: block;
+    width: 80px;
+    height: 20px;
+    text-align: center;
+    
+}
+.container{
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+.ele{
+    box-sizing: border-box;
+    display: block;
+    width: 25%;
+    height: 30px;
+    text-align: center;
+    margin: 0 auto;
+}
+button{
+    box-sizing: border-box;
+    display: block;
+    width: 25%;
+    height: 40px;
+    border-radius:10pt;
+    margin: 30px auto;
+}

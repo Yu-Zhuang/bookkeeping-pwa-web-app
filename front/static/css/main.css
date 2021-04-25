@@ -36,3 +36,8 @@
     width: 24px;
     height: 24px;
 }
+.body{
+    display: block;
+    text-align: center;
+    margin: 50px auto 45px auto; 
+}

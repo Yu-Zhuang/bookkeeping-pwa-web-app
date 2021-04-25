@@ -38,7 +38,7 @@ func InitDB() bool {
 		log.Fatal(err)
 		return false
 	}
-	if _, err := PostgresDB.Exec("CREATE TABLE IF NOT EXISTS paymentrecord (id serial PRIMARY KEY, class VARCHAR(20), payment INTEGER);"); err != nil {
+	if _, err := PostgresDB.Exec("CREATE TABLE IF NOT EXISTS paymentrecord (id serial PRIMARY KEY, class VARCHAR(20), payment INTEGER, date DATE, remark VARCHAR(30), personID VARCHAR(20), CONSTRAINT fk_person FOREIGN KEY(personID) REFERENCES person(id));"); err != nil {
 		log.Fatal(err)
 		return false
 	}

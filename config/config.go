@@ -10,6 +10,8 @@ const (
 	AuthExpireDuration  = 60 * 60 // unit: second
 	AuthCookieName      = "_auth_token"
 	TokenExpireDuration = time.Hour
+
+	AuthMidUserNameKey = "personID"
 )
 
 var (
