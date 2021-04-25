@@ -1,9 +1,5 @@
 const register = async () => {
-    const data, ok = await getData()
-    if (ok == false) {
-        alert('wrong input')
-        return
-    }
+    const data = await getData()
     const res = await fetch((hostUrl + 'api/register'), {
         method: 'POST',
         body: data,
@@ -30,7 +26,12 @@ function getData() {
     email = String(document.getElementById("email").value)
 
     if (psd != cpsd) {
-        return null, false
+        alert("密碼與確認密碼不符") 
+        window.location.href = hostUrl + "register"            
+    }
+    if (id == "" || pas == "" || _name == "" || email == "") {
+        alert("填寫不完全")
+        window.location.href = hostUrl + "register"  
     }
     ret = {
             "id": id,
@@ -38,5 +39,5 @@ function getData() {
             "name": _name,
             "email": email
     }
-    return JSON.stringify(ret), true
+    return JSON.stringify(ret)
 }
