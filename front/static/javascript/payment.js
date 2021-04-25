@@ -14,4 +14,20 @@ function addPayment() {
             "payment": payment,
             "remark": remark
     }
+    const res = await fetch((hostUrl + 'api/addPayment'), {
+        method: 'POST',
+        body: data,
+        headers: {
+            'Content-Type':'application/json'
+        }
+    })
+    if (res.status == 200) {
+        alert("新增成功") 
+        window.location.href = hostUrl
+        return
+    }
+    else {
+        alert("新增失敗") 
+        window.location.href = hostUrl + "/payment"            
+    }    
 }
