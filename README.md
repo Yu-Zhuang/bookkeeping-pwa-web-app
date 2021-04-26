@@ -3,6 +3,12 @@
 
 * demo link : https://bookkepping.herokuapp.com/
 
+* 技術 :
+  * 後端 : Go, gin框架
+  * 資料庫 : PostgreSQL
+  * 前端 : Chart.js, html/css/javascript
+  * 部署 : Heroku
+
 ## 1. 可像app一樣加載於桌面
 <img src="https://github.com/Yu-Zhuang/bookkeeping/blob/main/demoscreen/64978.jpg" width="200px">
 
