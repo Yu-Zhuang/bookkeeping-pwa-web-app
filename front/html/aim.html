@@ -11,18 +11,18 @@
     <link rel="manifest" href="static/javascript/manifest.json">
     <link rel="stylesheet" href="static/css/reset.css">
     <link rel="stylesheet" href="static/css/main.css">   
-    <link rel="stylesheet" href="static/css/payment.css">
+    <link rel="stylesheet" href="static/css/index.css">
     <title>GoKeep</title>
 </head>
 <body>
     <div class="header">
         <div class="title">
-            GoKeep - Add new
+            GoKeep - Aim
         </div>
 
         <div class="nav-bottom">
             <a href="/"><img src="static/image/chart.svg" alt=""></a>
-            <a href="/aim"><img src="static/image/target.svg" alt=""></a>
+            <a href="#"><img src="static/image/target.svg" alt=""></a>
             <a href="/payment"><img src="static/image/addNew.svg" alt=""></a>
             <a href="/list-payment"><img src="static/image/showRecord.svg" alt=""></a>
             <a href="/profile"><img src="static/image/userProfile.svg" alt=""></a>        
@@ -30,34 +30,12 @@
 
     </div>
 
-    <div class="body">
-        <div class="label">
-            <div class="wrap">日期</div>
-            <div class="wrap">類別</div>
-            <div class="wrap">金額</div>
-            <div class="wrap">備註</div>
-        </div>
-        <div class="container">
-            <input type="date" name="date" id="date" class="ele">
-            <select name="class" id="class" class="ele">
-                <option value="eat">食</option>
-                <option value="clothes">衣</option>
-                <option value="live">住</option>
-                <option value="traffic">行</option>
-                <option value="educate">育</option>
-                <option value="entertainment">樂</option>
-            </select>    
-            <input type="number" name="payment" id="payment" placeholder="消費金額" width="10" class="ele">
-            <input type="text" name="remark" id="remark" placeholder="備註(20字以內)" width="100" class="ele">    
-        </div>
-        <button onclick="addPayment()">新增一筆消費</button>
-
+    <div class="container" style="margin-top: 100px;">
+        <p>開發中, 敬請期待...</p>
     </div>
-
 
     <script src="static/javascript/conf.js"></script>
     <script src="static/javascript/getUser.js"></script>
-    <script src="static/javascript/payment.js"></script>
     <script>
         window.onload = getUser()
     </script>
