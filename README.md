@@ -13,5 +13,5 @@
 <img src="https://github.com/Yu-Zhuang/bookkeeping/blob/main/demoscreen/64974.jpg" width="200px">
 
 --- 
-ps. 尚未完成: 1. 抓統計數據, 2. 設定目標
+ps. 尚未完成: 2. 設定目標與計算建議平均每天只能花多少
 
