@@ -8,7 +8,7 @@ async function getChart() {
         method: 'GET',
     })
     if (res.status == 200) {
-            myJson = await res.json()
+            data = await res.json()
             for(let i = 0; i < data.line.length; i++) {
                 lineLabel.push(data.line[i].month)
                 lineData.push(data.line[i].total)
