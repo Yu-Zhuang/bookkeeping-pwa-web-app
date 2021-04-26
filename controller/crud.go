@@ -31,12 +31,12 @@ func AddPayment(c *gin.Context) {
 func GetPaymentHistory(c *gin.Context) {
 	userID := c.MustGet(config.AuthMidUserNameKey).(string)
 	tranlateMap := map[string]string{
-		"eat":            "食",
-		"clothes":        "衣",
-		"live":           "住",
-		"traffic":        "行",
-		"educate":        "育",
-		"enterainerment": "樂",
+		"eat":           "食",
+		"clothes":       "衣",
+		"live":          "住",
+		"traffic":       "行",
+		"educate":       "育",
+		"entertainment": "樂",
 	}
 	sql_statement := `SELECT class, payment, date, remark FROM paymentrecord WHERE personid=$1`
 	rows, err := dao.PostgresDB.Query(sql_statement, userID)
