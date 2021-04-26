@@ -26,6 +26,10 @@ func Login(c *gin.Context) {
 	c.JSON(http.StatusOK, nil)
 }
 
+func LogOut(c *gin.Context) {
+	c.SetCookie(config.AuthCookieName, "", -1, "/", config.HostUrl, false, true)
+}
+
 func Register(c *gin.Context) {
 	var person model.Person
 	c.Bind(&person)
