@@ -53,12 +53,8 @@ function getPieChart(pieLabels, pieData) {
         datasets: [{
             label: '分佈圖',
             data: pieData,
-            backgroundColor: [
-            'rgb(255, 99, 132)',
-            'rgb(54, 162, 235)',
-            'rgb(255, 205, 86)'
-            ],
-            hoverOffset: 4
+            backgroundColor: Object.values(Utils.CHART_COLORS),
+            hoverOffset: 6
         }]
         };
 
