@@ -22,7 +22,6 @@ async function getChart() {
             getLineChart(lineLabel, lineData, pieLabel, pieData)
     }
     else {
-        alert("無法載入資料")
         return
     }
 }
