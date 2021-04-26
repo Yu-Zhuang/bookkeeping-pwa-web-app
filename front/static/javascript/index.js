@@ -8,21 +8,26 @@ async function getChart() {
         method: 'GET',
     })
     if (res.status == 200) {
-            data = await res.json()
-            for(let i = 0; i < data.line.length; i++) {
-                lineLabel.push(data.line[i].month)
-                lineData.push(data.line[i].total)
+            myJson = await res.json()
+            line = myJson.line
+            pie = myJson.pie
+            for(let i = 0; i < line.length; i++) {
+                lineLabel.push(line[i].month)
+                lineData.push(line[i].total)
             }
-            for(let i = 0; i < data.pie.length; i++) {
-                pieLabel.push(data.pie[i].class)
-                pieData.push(data.pie[i].total)
+            for(let i = 0; i < pie.length; i++) {
+                pieLabel.push(pie[i].class)
+                pieData.push(pie[i].total)
             }
+            getLineChart(lineLabel, lineData)
     }
     else {
         alert("無法載入資料")
         return
     }
-    // line chart
+}
+
+function getLineChart(lineLabel, lineData) {
     const labels = lineLabel;
     const data = {
         labels: labels,
