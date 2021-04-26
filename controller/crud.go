@@ -7,6 +7,7 @@ import (
 	"bookkeeping/model"
 	"fmt"
 	"net/http"
+	"strings"
 
 	"github.com/gin-gonic/gin"
 )
@@ -15,6 +16,10 @@ func AddPayment(c *gin.Context) {
 	userID := c.MustGet(config.AuthMidUserNameKey).(string)
 	var input model.PaymentRecord
 	c.Bind(&input)
+	if input.Class == "" || input.Date == "" || input.Payment == "" {
+		c.JSON(http.StatusBadRequest, nil)
+		return
+	}
 	input.PersonID = userID
 	if logic.CreatePayment(input) == false {
 		c.JSON(http.StatusBadRequest, nil)
@@ -25,7 +30,14 @@ func AddPayment(c *gin.Context) {
 
 func GetPaymentHistory(c *gin.Context) {
 	userID := c.MustGet(config.AuthMidUserNameKey).(string)
-
+	tranlateMap := map[string]string{
+		"eat":            "食",
+		"clothes":        "衣",
+		"live":           "住",
+		"traffic":        "行",
+		"educate":        "育",
+		"enterainerment": "樂",
+	}
 	sql_statement := `SELECT class, payment, date, remark FROM paymentrecord WHERE personid=$1`
 	rows, err := dao.PostgresDB.Query(sql_statement, userID)
 	if err != nil {
@@ -41,6 +53,8 @@ func GetPaymentHistory(c *gin.Context) {
 			fmt.Println(err.Error())
 			c.JSON(http.StatusBadRequest, nil)
 		}
+		tmpData.Date = strings.ReplaceAll(tmpData.Date, "T00:00:00Z", "")
+		tmpData.Class = tranlateMap[tmpData.Class]
 		retData = append(retData, tmpData)
 	}
 	c.JSON(http.StatusOK, gin.H{
