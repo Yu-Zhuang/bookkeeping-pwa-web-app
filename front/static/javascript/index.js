@@ -19,7 +19,7 @@ async function getChart() {
                 pieLabel.push(pie[i].class)
                 pieData.push(pie[i].total)
             }
-            getLineChart(lineLabel, lineData)
+            getLineChart(lineLabel, lineData, pieLabel, pieData)
     }
     else {
         alert("無法載入資料")
@@ -27,7 +27,7 @@ async function getChart() {
     }
 }
 
-function getLineChart(lineLabel, lineData) {
+function getLineChart(lineLabel, lineData, pieLabel, pieData) {
     const labels = lineLabel;
     const data = {
         labels: labels,
