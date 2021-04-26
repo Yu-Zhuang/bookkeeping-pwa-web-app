@@ -1,20 +1,37 @@
-function getChart() {
+async function getChart() {
+    let lineLabel = []
+    let lineData = []
+    let pieLabel = []
+    let pieData = []
+    // get data
+    const res = await fetch((hostUrl + 'api/getChartData'), {
+        method: 'GET',
+    })
+    if (res.status == 200) {
+            myJson = await res.json()
+            data = myJson.data
+            for(let i = 0; i < data.line.length; i++) {
+                lineLabel.push(data.line[i].month)
+                lineData.push(data.line[i].total)
+            }
+            for(let i = 0; i < data.pie.length; i++) {
+                pieLabel.push(data.pie[i].class)
+                pieData.push(data.pie[i].total)
+            }
+    }
+    else {
+        alert("無法載入資料")
+        return
+    }
     // line chart
-    const labels = [
-        'January',
-        'February',
-        'March',
-        'April',
-        'May',
-        'June',
-    ];
+    const labels = lineLabel;
     const data = {
         labels: labels,
         datasets: [{
-            label: '每月花費',
+            label: '月花費',
             backgroundColor: 'rgb(255, 99, 132)',
             borderColor: 'rgb(255, 99, 132)',
-            data: [3500, 4000, 3300, 6000, 4500, 3700, 3400],
+            data: lineData,
         }]
     };
     const config = {
@@ -23,19 +40,15 @@ function getChart() {
         options: {}
     };
     var myChart = new Chart(document.getElementById('lineChart'), config)        
-    getPieChart()
+    getPieChart(pieLabel, pieData)
 }
 
-function getPieChart() {
+function getPieChart(pieLabels, pieData) {
     const data2 = {
-        labels: [
-            '食',
-            '衣',
-            '住'
-        ],
+        labels: pieLabels,
         datasets: [{
-            label: 'My First Dataset',
-            data: [300, 50, 100],
+            label: '分佈圖',
+            data: pieData,
             backgroundColor: [
             'rgb(255, 99, 132)',
             'rgb(54, 162, 235)',
