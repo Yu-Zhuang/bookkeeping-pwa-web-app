@@ -12,6 +12,30 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+func GetProfile(c *gin.Context) {
+	userID := c.MustGet(config.AuthMidUserNameKey).(string)
+	sql_statement := `SELECT name, email FROM person WHERE id=$1`
+	rows, err := dao.PostgresDB.Query(sql_statement, userID)
+	if err != nil {
+		fmt.Println(err.Error())
+		c.JSON(http.StatusBadRequest, nil)
+		return
+	}
+	var name string
+	var email string
+	for rows.Next() {
+		if err := rows.Scan(&name, &email); err != nil {
+			fmt.Println(err.Error())
+			c.JSON(http.StatusBadRequest, nil)
+		}
+	}
+	c.JSON(http.StatusOK, gin.H{
+		"name":  name,
+		"email": email,
+	})
+
+}
+
 func AddPayment(c *gin.Context) {
 	userID := c.MustGet(config.AuthMidUserNameKey).(string)
 	var input model.PaymentRecord

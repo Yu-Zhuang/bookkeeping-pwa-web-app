@@ -24,6 +24,7 @@ func SetUp() *gin.Engine {
 
 		api.POST("/addPayment", controller.Auth, controller.AddPayment)
 		api.GET("/getPaymentHistory", controller.Auth, controller.GetPaymentHistory)
+		api.GET("/getProfile", controller.Auth, controller.GetProfile)
 	}
 
 	return r

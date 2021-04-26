@@ -25,14 +25,14 @@
             <a href="#"><img src="static/image/target.svg" alt=""></a>
             <a href="/payment"><img src="static/image/addNew.svg" alt=""></a>
             <a href="/list-payment"><img src="static/image/showRecord.svg" alt=""></a>
-            <a href="#"><img src="static/image/userProfile.svg" alt=""></a>        
+            <a href="/profile"><img src="static/image/userProfile.svg" alt=""></a>        
         </div>
     </div>
 
-    <div class="container">
-        <div class="name"></div>
-        <div class="email"></div>
-        <button onclick="">登出</button>
+    <div class="body">
+        <div class="name" id="_name" style="padding-top: 50px;">姓名: </div><br>
+        <div class="email" id="email" style="margin-top: 10px;">電郵: </div><br>
+        <button onclick="logout()" style="margin-top: 10px;">登出</button>
     </div>
 
 
@@ -40,6 +40,21 @@
     <script src="static/javascript/getUser.js"></script>
     <script>
         window.onload = getUser()
+        window.onload =  async function getProfile() {
+            email = document.getElementById('email')
+            _name = document.getElementById('_name')
+            const res = await fetch((hostUrl + 'api/getProfile'), {
+                method: 'GET',
+            })
+            if (res.status == 200) {
+                myJson = await res.json()
+                email.innerHTML += myJson.email
+                _name.innerHTML += myJson.name
+                return
+            }
+            email.innerHTML += `(空)`
+            _name.innerHTML += `(空)`
+        }
         async function logout() {
             const res = await fetch((hostUrl + 'api/logOut'), {
                 method: 'POST',
