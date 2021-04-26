@@ -2,6 +2,7 @@
 記帳-PWA-web-app (Bookkeeping-PWA-web-app)
 
 * demo link : https://bookkepping.herokuapp.com/
+  * 測試用帳密 : tester002 , tester002
 
 * 技術 :
   * 後端 : Go, gin框架
