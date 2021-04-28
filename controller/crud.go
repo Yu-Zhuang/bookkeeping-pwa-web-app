@@ -146,7 +146,9 @@ func GetAverage(c *gin.Context) {
 	}
 	dayAvg := strconv.Itoa(tmpNum)
 	c.JSON(http.StatusOK, gin.H{
-		"monthAvg": monthAvg,
-		"dayAvg":   dayAvg,
+		"data": gin.H{
+			"monthAvg": monthAvg,
+			"dayAvg":   dayAvg,
+		},
 	})
 }
