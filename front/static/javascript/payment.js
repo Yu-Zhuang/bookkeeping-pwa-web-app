@@ -23,7 +23,7 @@ function getData() {
     _class = String(document.getElementById("class").value)
     payment = String(document.getElementById("payment").value)
     remark = String(document.getElementById("remark").value)
-    if (date == "" || _class == "" || payment == "" || remark == "") {
+    if (date == "" || _class == "" || payment == "") {
         alert("尚未填寫完整")
         return
     }
