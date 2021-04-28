@@ -19,7 +19,11 @@ async function getChart() {
                 pieLabel.push(pie[i].class)
                 pieData.push(pie[i].total)
             }
-            getLineChart(lineLabel, lineData, pieLabel, pieData)
+            if (lineLabel.length > 0) {
+                getLineChart(lineLabel, lineData, pieLabel, pieData)
+            } else {
+                getLineChart(['空'], [0], ['空'], [0])
+            }       
     }
     else {
         getLineChart(['空'], [0], ['空'], [0])

@@ -6,7 +6,7 @@ async function getPaymentRecord() {
     if (res.status == 200) {
         myJson = await res.json()
         data = myJson.data
-        if (data.length < 1) {
+        if (data == null) {
             record = preproRecord('空', '空', '空', '空')
         } else {
             for (let i = data.length-1; i >= 0; i--) {
