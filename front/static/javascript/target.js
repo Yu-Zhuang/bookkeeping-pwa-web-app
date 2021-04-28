@@ -9,7 +9,6 @@ async function getAverage() {
         data = myJson.data
         m_avg.innerHTML += data.monthAvg
         d_avg.innerHTML += data.dayAvg
-        return
     }
     else {
         m_avg.innerHTML += 'no data'

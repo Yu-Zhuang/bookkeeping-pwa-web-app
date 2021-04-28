@@ -11,6 +11,10 @@ async function getChart() {
             myJson = await res.json()
             line = myJson.line
             pie = myJson.pie
+            if (line == null || line.length < 0) {
+                getLineChart(['空'], [0], ['空'], [0])
+                return
+            }
             for(let i = 0; i < line.length; i++) {
                 lineLabel.push(line[i].month)
                 lineData.push(line[i].total)
@@ -18,12 +22,7 @@ async function getChart() {
             for(let i = 0; i < pie.length; i++) {
                 pieLabel.push(pie[i].class)
                 pieData.push(pie[i].total)
-            }
-            if (lineLabel.length > 0) {
-                getLineChart(lineLabel, lineData, pieLabel, pieData)
-            } else {
-                getLineChart(['空'], [0], ['空'], [0])
-            }       
+            }     
     }
     else {
         getLineChart(['空'], [0], ['空'], [0])

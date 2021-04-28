@@ -8,13 +8,13 @@ async function getPaymentRecord() {
         data = myJson.data
         if (data == null) {
             record = preproRecord('空', '空', '空', '空')
+            container.innerHTML += record
         } else {
             for (let i = data.length-1; i >= 0; i--) {
                 record = preproRecord(data[i].date, data[i].class, data[i].payment, data[i].remark)
                 container.innerHTML += record
             }
         }
-        return
     }
     else {
         record = preproRecord('空', '空', '空', '空')
