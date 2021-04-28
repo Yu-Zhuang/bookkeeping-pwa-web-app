@@ -26,6 +26,7 @@ func SetUp() *gin.Engine {
 		api.GET("/getPaymentHistory", controller.Auth, controller.GetPaymentHistory)
 		api.GET("/getProfile", controller.Auth, controller.GetProfile)
 		api.GET("/getChartData", controller.Auth, controller.GetChartData)
+		api.GET("/getAverage", controller.Auth, controller.GetAverage)
 	}
 
 	return r
