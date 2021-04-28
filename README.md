@@ -14,12 +14,18 @@
 <img src="https://github.com/Yu-Zhuang/bookkeeping/blob/main/demoscreen/64978.jpg" width="200">
 
 ## 2. 新增與查看消費紀錄
-<img src="https://github.com/Yu-Zhuang/bookkeeping/blob/main/demoscreen/64975.jpg" width="200" style="display: block;">
-<img align="right" src="https://github.com/Yu-Zhuang/bookkeeping/blob/main/demoscreen/64976.jpg" width="200" style="display: block;">
+<p align="center" width="100%">
+    <img src="https://github.com/Yu-Zhuang/bookkeeping/blob/main/demoscreen/64975.jpg" width="200">
+    <img src="https://github.com/Yu-Zhuang/bookkeeping/blob/main/demoscreen/64976.jpg" width="200">
+</p>
+
 
 ## 3. 查看統計數據
-<img src="https://github.com/Yu-Zhuang/bookkeeping/blob/main/demoscreen/64974.jpg" width="200" style="display: block;">
-<img align="right" src="https://github.com/Yu-Zhuang/bookkeeping/blob/main/demoscreen/65117.jpg" width="200" style="display: block;">
+<p align="center" width="100%">
+    <img src="https://github.com/Yu-Zhuang/bookkeeping/blob/main/demoscreen/64974.jpg" width="200">
+    <img src="https://github.com/Yu-Zhuang/bookkeeping/blob/main/demoscreen/65117.jpg" width="200">
+</p>
+
 
 --- 
 ps. 尚未完成: (1)設定目標與計算建議平均每天只能花多少, (3)編輯與刪除紀錄, (3)選擇統計數據區間
