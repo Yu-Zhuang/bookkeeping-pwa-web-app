@@ -22,7 +22,7 @@ async function getChart() {
             getLineChart(lineLabel, lineData, pieLabel, pieData)
     }
     else {
-        getLineChart([], [], [], [])
+        getLineChart(['空'], [0], ['空'], [0])
         return
     }
 }
