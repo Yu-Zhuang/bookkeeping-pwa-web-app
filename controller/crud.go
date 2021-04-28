@@ -108,7 +108,7 @@ func GetAverage(c *gin.Context) {
 	}
 	currentMonth = transLateMonth[currentMonth]
 	// m-avg
-	sql_statement := `SELECT SUM(payment)/COUNT(payment) AS monthAverage FROM paymentrecord WHERE personid=$1 AND DATE_PART('YEAR', date)=$2 GROUP BY DATE_PART('MONTH', date);`
+	sql_statement := `SELECT SUM(payment) AS monthSum FROM paymentrecord WHERE personid=$1 AND DATE_PART('YEAR', date)=$2 GROUP BY DATE_PART('MONTH', date);`
 	rows, err := dao.PostgresDB.Query(sql_statement, userID, currentYear)
 	if err != nil {
 		fmt.Println(err.Error())
@@ -128,9 +128,16 @@ func GetAverage(c *gin.Context) {
 		tmpNum = 0
 		count++
 	}
-	monthAvg := strconv.Itoa(totalNum / count)
+	var monthAvg string
+	if count > 0 {
+		monthAvg = strconv.Itoa(totalNum / count)
+	} else {
+		fmt.Println(err.Error())
+		c.JSON(http.StatusBadRequest, nil)
+		return
+	}
 	// dayAvg
-	sql_statement = `SELECT SUM(payment)/COUNT(payment) as dayAverage FROM paymentrecord WHERE personid=$1 AND DATE_PART('YEAR', date)=$2 AND DATE_PART('MONTH', date)=$3;`
+	sql_statement = `SELECT SUM(payment) as dayAverage FROM paymentrecord WHERE personid=$1 AND DATE_PART('YEAR', date)=$2 AND DATE_PART('MONTH', date)=$3;`
 	rows, err = dao.PostgresDB.Query(sql_statement, userID, currentYear, currentMonth)
 	if err != nil {
 		fmt.Println(err.Error())
@@ -144,7 +151,7 @@ func GetAverage(c *gin.Context) {
 			return
 		}
 	}
-	dayAvg := strconv.Itoa(tmpNum)
+	dayAvg := strconv.Itoa(tmpNum / time.Now().Day())
 	c.JSON(http.StatusOK, gin.H{
 		"data": gin.H{
 			"monthAvg": monthAvg,
