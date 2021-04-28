@@ -132,7 +132,6 @@ func GetAverage(c *gin.Context) {
 	if count > 0 {
 		monthAvg = strconv.Itoa(totalNum / count)
 	} else {
-		fmt.Println(err.Error())
 		c.JSON(http.StatusBadRequest, nil)
 		return
 	}
