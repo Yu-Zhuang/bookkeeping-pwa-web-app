@@ -7,9 +7,9 @@ const (
 	AccountMinLen = 8
 	AccountMaxLen = 20
 
-	AuthExpireDuration  = 60 * 60 // unit: second
+	AuthExpireDuration  = 60 * 60 * 24 * 180 // unit: second
 	AuthCookieName      = "_auth_token"
-	TokenExpireDuration = time.Hour
+	TokenExpireDuration = time.Hour * 24 * 180
 
 	AuthMidUserNameKey = "personID"
 )
