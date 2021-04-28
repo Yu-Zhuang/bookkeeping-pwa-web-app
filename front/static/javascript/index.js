@@ -11,7 +11,7 @@ async function getChart() {
             myJson = await res.json()
             line = myJson.line
             pie = myJson.pie
-            if (line == null || line.length < 0) {
+            if (line == null || line.length <= 0) {
                 getLineChart(['空'], [0], ['空'], [0])
                 return
             }
@@ -22,7 +22,8 @@ async function getChart() {
             for(let i = 0; i < pie.length; i++) {
                 pieLabel.push(pie[i].class)
                 pieData.push(pie[i].total)
-            }     
+            } 
+            getLineChart(lineLabel, lineData, pieLabel, pieData)    
     }
     else {
         getLineChart(['空'], [0], ['空'], [0])
