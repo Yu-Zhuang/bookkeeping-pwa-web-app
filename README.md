@@ -11,15 +11,15 @@
   * 部署 : Heroku
 
 ## 1. 可像app一樣加載於桌面
-![](https://github.com/Yu-Zhuang/bookkeeping/blob/main/demoscreen/64978.jp | width=200)
+![](https://github.com/Yu-Zhuang/bookkeeping/blob/main/demoscreen/64978.png | width=200)
 
 ## 2. 新增與查看消費紀錄
-![](https://github.com/Yu-Zhuang/bookkeeping/blob/main/demoscreen/64975.jp | width=200)
-![](https://github.com/Yu-Zhuang/bookkeeping/blob/main/demoscreen/64976.jp | width=200)
+![](https://github.com/Yu-Zhuang/bookkeeping/blob/main/demoscreen/64975.png | width=200)
+![](https://github.com/Yu-Zhuang/bookkeeping/blob/main/demoscreen/64976.png | width=200)
 
 ## 3. 查看統計數據
-![](https://github.com/Yu-Zhuang/bookkeeping/blob/main/demoscreen/64974.jp | width=200)
-![](https://github.com/Yu-Zhuang/bookkeeping/blob/main/demoscreen/65117.jp | width=200)
+![](https://github.com/Yu-Zhuang/bookkeeping/blob/main/demoscreen/64974.png | width=200)
+![](https://github.com/Yu-Zhuang/bookkeeping/blob/main/demoscreen/65117.png | width=200)
 --- 
 ps. 尚未完成: (1)設定目標與計算建議平均每天只能花多少, (3)編輯與刪除紀錄, (3)選擇統計數據區間
 
