@@ -1,4 +1,4 @@
-const CACHE_NAME = "gokeep_cache_v6"
+const CACHE_NAME = "gokeep_cache_v7"
 // 緩存內容
 self.addEventListener('install', async event => {
     console.log('install', event)
@@ -9,6 +9,7 @@ self.addEventListener('install', async event => {
         '/',
         '/error',
         'static/javascript/manifest.json',
+        'static/image/wifi-off.svg',
         'static/image/apple-touch-icon.png',
         'static/image/favicon-32x32.png',
         'static/image/favicon-16x16.png',
