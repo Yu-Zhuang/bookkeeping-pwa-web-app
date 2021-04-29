@@ -56,10 +56,10 @@
     height: 30px;
     text-align: center;
 }
-.element{
+._element{
     display: block;
     width: 25%;
-    height: 30px;
+    height: 36px;
     text-align: center;
     margin: 0 auto;
 }
