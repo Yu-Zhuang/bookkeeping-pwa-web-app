@@ -75,32 +75,3 @@ function getPieChart(pieLabels, pieData) {
     };
     var myChart2 = new Chart(document.getElementById('pieChart'), config2)  
 }
-
-// pwa
-window.addEventListener('load', async () =>{
-    if ('serviceWorker' in navigator) {
-        try {
-            const regi = await navigator.serviceWorker.register("zService-worker.js")
-        } catch(e) {
-            console.log(`sw註冊失敗`)
-        }
-    }
-})
-// // 跳提醒授權: default(未授權), granted(已授權), denid(鎖)
-// if(Notification.permission === 'default') {
-//     Notification.requestPermission()
-// }
-
-if(!navigator.onLine) {
-    if (window.location.href != hostUrl + "error") {
-        alert('沒有網路')
-        window.location.href =  hostUrl + "error"   
-    } 
-}
-
-window.addEventListener('online', ()=>{
-    if (window.location.href != hostUrl) {
-        alert('有網路了')
-        window.location.href = hostUrl
-    } 
-})
