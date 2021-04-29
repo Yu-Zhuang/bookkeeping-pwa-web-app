@@ -34,27 +34,27 @@
 }
 #record{
     margin-top: 100px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
 }
 .ele{
     display: block;
     width: 20%;
     height: 30px;
     text-align: center;
-    margin: 0 auto;
 }
 .ele-big{
     display: block;
     width: 30%;
     height: 30px;
     text-align: center;
-    margin: 0 auto;
 }
 .ele-small{
     display: block;
     width: 10%;
     height: 30px;
     text-align: center;
-    margin: 0 auto;
 }
 .element{
     display: block;
