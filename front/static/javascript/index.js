@@ -92,13 +92,15 @@ window.addEventListener('load', async () =>{
 // }
 
 if(!navigator.onLine) {
-    alert('沒有網路')
     if (window.location.href != hostUrl + "error") {
+        alert('沒有網路')
         window.location.href =  hostUrl + "error"   
     } 
 }
 
 window.addEventListener('online', ()=>{
-    alert('有網路了')
-    window.location.href =  hostUrl
+    if (window.location.href != hostUrl) {
+        alert('有網路了')
+        window.location.href = hostUrl
+    } 
 })
