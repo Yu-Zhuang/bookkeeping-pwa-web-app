@@ -1,7 +1,7 @@
 package model
 
 type PaymentRecord struct {
-	ID       string `json:"id" form:"id"`
+	ID       string `json:"_id" form:"_id"`
 	Class    string `json:"class" form:"class"`
 	Payment  string `json:"payment" form:"payment"`
 	Date     string `json:"date" form:"date"`

@@ -18,6 +18,9 @@
     margin: 0 auto;
     text-align: center;
 }
+#record{
+    margin-top: 100px;
+}
 .ele{
     box-sizing: border-box;
     display: block;
