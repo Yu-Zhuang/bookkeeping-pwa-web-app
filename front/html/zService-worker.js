@@ -1,4 +1,4 @@
-const CACHE_NAME = "gokeep_cache_v2"
+const CACHE_NAME = "gokeep_cache_v3"
 // 緩存內容
 self.addEventListener('install', async event => {
     console.log('install', event)
@@ -6,8 +6,22 @@ self.addEventListener('install', async event => {
     const cache = await caches.open(CACHE_NAME)
     // 儲存資料在cache中
     await cache.addAll([
-        '/',
-        'static/javascript/manifest.json'
+        '/error',
+        'static/javascript/manifest.json',
+        'static/image/apple-touch-icon.png',
+        'static/image/favicon-32x32.png',
+        'static/image/favicon-16x16.png',
+        'static/image/favicon.ico',
+        'static/css/reset.css',
+        'static/css/main.css',
+        'static/css/index.css',
+        'static/image/inactive-chart.svg',
+        'static/image/inactive-target.svg',
+        'static/image/inactive-addNew.svg',
+        'static/image/inactive-showRecord.svg',
+        'static/image/inactive-userProfile.svg',
+        'static/javascript/conf.js',
+        'static/javascript/index.js',
     ])
     await self.skipWaiting()
 })
@@ -41,7 +55,7 @@ async function netWorkFirst(req) {
         // 失敗了: 去讀取暫存
         console.log(`讀緩存`)
         const cache = await caches.open(CACHE_NAME) // 先打開瀏覽器中的暫存
-        const cached = await caches.match(req) // 找出路徑對應的cache並回傳該暫存
+        const cached = await caches.match(req+'error') // 找出路徑對應的cache並回傳該暫存
         return cached
     }
     
