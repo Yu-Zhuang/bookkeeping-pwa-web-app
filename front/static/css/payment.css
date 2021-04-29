@@ -8,10 +8,16 @@
 .wrap{
     margin: 10px auto;
     display: block;
-    width: 75px;
+    width: 25%;
     height: 20px;
-    text-align: center;
-    
+    text-align: center;   
+}
+.wrap-small{
+    margin: 10px auto;
+    display: block;
+    width: 12.5%;
+    height: 20px;
+    text-align: center;   
 }
 .container{
     display: flex;
@@ -26,6 +32,14 @@
     box-sizing: border-box;
     display: block;
     width: 20%;
+    height: 30px;
+    text-align: center;
+    margin: 0 auto;
+}
+.ele-small{
+    box-sizing: border-box;
+    display: block;
+    width: 12.5%;
     height: 30px;
     text-align: center;
     margin: 0 auto;
@@ -48,5 +62,4 @@ button{
 }
 .delete{
     cursor: pointer;
-    width: 12.5%;
 }
