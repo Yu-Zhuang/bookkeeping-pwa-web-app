@@ -34,7 +34,7 @@ function preproRecord(date, _class, payment, remark, _id) {
     `
 }
 
-function deletItem(_id) {
+async function deletItem(_id) {
     let req = "api/deletRecord/" + String(_id)
     const res = await fetch((hostUrl + req), {
         method: 'GET',
