@@ -12,10 +12,17 @@
     height: 20px;
     text-align: center;   
 }
+.wrap-big{
+    margin: 10px auto;
+    display: block;
+    width: 30%;
+    height: 20px;
+    text-align: center;   
+}
 .wrap-small{
     margin: 10px auto;
     display: block;
-    width: 12.5%;
+    width: 10%;
     height: 20px;
     text-align: center;   
 }
@@ -36,10 +43,18 @@
     text-align: center;
     margin: 0 auto;
 }
+.ele-big{
+    box-sizing: border-box;
+    display: block;
+    width: 30%;
+    height: 30px;
+    text-align: center;
+    margin: 0 auto;
+}
 .ele-small{
     box-sizing: border-box;
     display: block;
-    width: 12.5%;
+    width: 10%;
     height: 30px;
     text-align: center;
     margin: 0 auto;

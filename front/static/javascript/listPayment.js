@@ -25,7 +25,7 @@ async function getPaymentRecord() {
 function preproRecord(date, _class, payment, remark, _id) {
     return `
     <div class="container" style="margin-top: 10px; border-bottom: 1px dashed black;">
-        <div id="date" class="ele">${date}</div>
+        <div id="date" class="ele-big">${date}</div>
         <div id="class" class="ele-small">${_class}</div> 
         <div id="payment" class="ele">${payment}</div>  
         <div id="remark" class="ele">${remark}</div>
