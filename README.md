@@ -11,8 +11,8 @@
   * 部署 : Heroku
 
 ## 1. 像native app一樣加於桌面
-* ps. android建議使用chrome加於桌面, ios需使用safari加於桌面.
 <kbd><img src="https://github.com/Yu-Zhuang/bookkeeping/blob/main/demoscreen/64978.jpg" width="200"></kbd>
+* ps. android建議使用chrome加於桌面, ios需使用safari加於桌面.
 
 ## 2. 新增|查看|刪除消費紀錄
 <p width="100%">
