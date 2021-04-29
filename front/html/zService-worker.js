@@ -1,4 +1,4 @@
-const CACHE_NAME = "gokeep_cache_v8"
+const CACHE_NAME = "gokeep_cache_v9"
 // 緩存內容
 self.addEventListener('install', async event => {
     console.log('install', event)
@@ -8,6 +8,10 @@ self.addEventListener('install', async event => {
     await cache.addAll([
         '/',
         '/error',
+        '/list-payment',
+        '/payment',
+        '/profile',
+        '/target',
         'static/javascript/manifest.json',
         'static/image/wifi-off.svg',
         'static/image/apple-touch-icon.png',
