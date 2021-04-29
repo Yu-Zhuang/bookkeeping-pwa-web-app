@@ -1,7 +1,7 @@
 # GoKeep (bookkeeping web app)
 記帳-PWA-web-app (Bookkeeping-PWA-web-app)
 
-* demo link : https://bookkepping.herokuapp.com/
+* **demo link : https://bookkepping.herokuapp.com/**
   * 測試用帳密 : tester002 , tester002 (亦可自己註冊其他帳密使用)
 
 * 技術 :
