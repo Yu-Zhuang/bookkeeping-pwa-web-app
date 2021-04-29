@@ -9,7 +9,7 @@ async function addPayment() {
     })
     if (res.status == 200) {
         alert("新增成功") 
-        window.location.href = hostUrl
+        window.location.href = hostUrl + "list-payment"
         return
     }
     else {
