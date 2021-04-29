@@ -1,4 +1,4 @@
-const CACHE_NAME = "gokeep_cache_v4"
+const CACHE_NAME = "gokeep_cache_v5"
 // 緩存內容
 self.addEventListener('install', async event => {
     console.log('install', event)
@@ -7,6 +7,7 @@ self.addEventListener('install', async event => {
     // 儲存資料在cache中
     await cache.addAll([
         '/',
+        '/error',
         'static/javascript/manifest.json',
         'static/image/apple-touch-icon.png',
         'static/image/favicon-32x32.png',
@@ -16,6 +17,7 @@ self.addEventListener('install', async event => {
         'static/css/main.css',
         'static/css/index.css',
         'static/image/inactive-chart.svg',
+        'static/image/active-chart.svg',
         'static/image/inactive-target.svg',
         'static/image/inactive-addNew.svg',
         'static/image/inactive-showRecord.svg',
