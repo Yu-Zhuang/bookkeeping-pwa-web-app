@@ -7,7 +7,7 @@ self.addEventListener('install', async event => {
     // 儲存資料在cache中
     await cache.addAll([
         '/',
-        '/static/javascript/manifest.json'
+        'static/javascript/manifest.json'
     ])
     await self.skipWaiting()
 })
