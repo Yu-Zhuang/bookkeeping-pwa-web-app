@@ -6,7 +6,7 @@ self.addEventListener('install', async event => {
     const cache = await caches.open(CACHE_NAME)
     // 儲存資料在cache中
     await cache.addAll([
-        '/error',
+        '/',
         'static/javascript/manifest.json',
         'static/image/apple-touch-icon.png',
         'static/image/favicon-32x32.png',
@@ -55,7 +55,7 @@ async function netWorkFirst(req) {
         // 失敗了: 去讀取暫存
         console.log(`讀緩存`)
         const cache = await caches.open(CACHE_NAME) // 先打開瀏覽器中的暫存
-        const cached = await caches.match(req+'error') // 找出路徑對應的cache並回傳該暫存
+        const cached = await caches.match(req) // 找出路徑對應的cache並回傳該暫存
         return cached
     }
     
