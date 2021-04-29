@@ -80,7 +80,7 @@ function getPieChart(pieLabels, pieData) {
 window.addEventListener('load', async () =>{
     if ('serviceWorker' in navigator) {
         try {
-            const regi = await navigator.serviceWorker.register("service-worker.js")
+            const regi = await navigator.serviceWorker.register("zService-worker.js")
         } catch(e) {
             console.log(`sw註冊失敗`)
         }
