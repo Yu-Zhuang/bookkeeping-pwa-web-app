@@ -27,6 +27,7 @@ func SetUp() *gin.Engine {
 		api.GET("/getProfile", controller.Auth, controller.GetProfile)
 		api.GET("/getChartData", controller.Auth, controller.GetChartData)
 		api.GET("/getAverage", controller.Auth, controller.GetAverage)
+		api.GET("/deletRecord/:_id", controller.Auth, controller.DeletRecord)
 	}
 
 	return r

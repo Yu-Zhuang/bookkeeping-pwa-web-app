@@ -14,6 +14,19 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+func DeletRecord(c *gin.Context) {
+	userID := c.MustGet(config.AuthMidUserNameKey).(string)
+	itemID := c.Param("_id")
+	sql_statement := `DELETE FROM paymentrecord WHERE id=$1 AND personid=$2`
+	_, err := dao.PostgresDB.Exec(sql_statement, itemID, userID)
+	if err != nil {
+		fmt.Println(err.Error())
+		c.JSON(http.StatusBadRequest, nil)
+		return
+	}
+	c.JSON(http.StatusOK, nil)
+}
+
 func GetProfile(c *gin.Context) {
 	userID := c.MustGet(config.AuthMidUserNameKey).(string)
 	sql_statement := `SELECT name, email FROM person WHERE id=$1`
