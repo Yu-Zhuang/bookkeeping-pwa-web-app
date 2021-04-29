@@ -10,7 +10,7 @@
   * 前端 : Chart.js, html/css/javascript
   * 部署 : Heroku
 
-## 1. 像native app一樣加於桌面
+## 1. 像native app一樣加於桌面|離線存取頁面
 <p width="100%">
   <kbd><img src="https://github.com/Yu-Zhuang/bookkeeping/blob/main/demoscreen/64978.jpg" width="200"></kbd>
   <kbd><img src="https://github.com/Yu-Zhuang/bookkeeping/blob/main/demoscreen/65165.jpg" width="200"></kbd>
