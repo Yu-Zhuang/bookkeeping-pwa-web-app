@@ -5,7 +5,7 @@
   * 測試用帳密 : tester002 , tester002 (亦可自己註冊其他帳密使用)
 
 * 技術 :
-  * 後端 : Go, gin框架
+  * 後端 : Go語言, gin框架
   * 資料庫 : PostgreSQL
   * 前端 : Chart.js, html/css/javascript
   * 部署 : Heroku
