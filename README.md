@@ -11,19 +11,19 @@
   * 部署 : Heroku
 
 ## 1. 可像app一樣加載於桌面
-<img src="https://github.com/Yu-Zhuang/bookkeeping/blob/main/demoscreen/64978.jpg" width="200">
+<kbd><img src="https://github.com/Yu-Zhuang/bookkeeping/blob/main/demoscreen/64978.jpg" width="200"></kbd>
 
 ## 2. 新增與查看消費紀錄
 <p width="100%">
-    <img src="https://github.com/Yu-Zhuang/bookkeeping/blob/main/demoscreen/65162.jpg" width="200">
-    <img src="https://github.com/Yu-Zhuang/bookkeeping/blob/main/demoscreen/65161.jpg" width="200">
+    <kbd><img src="https://github.com/Yu-Zhuang/bookkeeping/blob/main/demoscreen/65162.jpg" width="200"></kbd>
+    <kbd><img src="https://github.com/Yu-Zhuang/bookkeeping/blob/main/demoscreen/65161.jpg" width="200"></kbd>
 </p>
 
 
 ## 3. 查看統計數據
 <p width="100%">
-    <img src="https://github.com/Yu-Zhuang/bookkeeping/blob/main/demoscreen/65164.jpg" width="200">
-    <img src="https://github.com/Yu-Zhuang/bookkeeping/blob/main/demoscreen/65163.jpg" width="200">
+    <kbd><img src="https://github.com/Yu-Zhuang/bookkeeping/blob/main/demoscreen/65164.jpg" width="200"></kbd>
+    <kbd><img src="https://github.com/Yu-Zhuang/bookkeeping/blob/main/demoscreen/65163.jpg" width="200"></kbd>
 </p>
 
 
