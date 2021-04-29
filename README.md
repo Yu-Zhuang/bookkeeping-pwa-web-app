@@ -1,4 +1,4 @@
-# GoKeep (bookkeeping wab app)
+# GoKeep (bookkeeping web app)
 記帳-PWA-web-app (Bookkeeping-PWA-web-app)
 
 * demo link : https://bookkepping.herokuapp.com/
