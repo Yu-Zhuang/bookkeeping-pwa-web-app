@@ -34,7 +34,14 @@ function preproRecord(date, _class, payment, remark, _id) {
     `
 }
 
-async function deletItem(_id) {
+function deletItem(_id) {
+    let confirmAction = confirm("確定要刪除?")
+    if (confirmAction) {
+        actDelete(_id)
+    }
+}
+
+async function actDelete(_id) {
     let req = "api/deletRecord/" + String(_id)
     const res = await fetch((hostUrl + req), {
         method: 'GET',
