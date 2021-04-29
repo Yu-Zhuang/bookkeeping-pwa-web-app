@@ -3,6 +3,7 @@
     width: 100%;
     margin: 0 auto;
     background-color: #aaa;
+    top: 50px;
 }
 .wrap{
     margin: 10px auto;
@@ -29,6 +30,14 @@
     text-align: center;
     margin: 0 auto;
 }
+.ele{
+    box-sizing: border-box;
+    display: block;
+    width: 25%;
+    height: 30px;
+    text-align: center;
+    margin: 0 auto;
+}
 button{
     box-sizing: border-box;
     display: block;
@@ -36,4 +45,7 @@ button{
     height: 40px;
     border-radius:10pt;
     margin: 30px auto;
+}
+.delete{
+    cursor: pointer;
 }

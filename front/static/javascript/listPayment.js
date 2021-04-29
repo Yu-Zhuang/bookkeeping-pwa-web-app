@@ -29,7 +29,7 @@ function preproRecord(date, _class, payment, remark, _id) {
         <div id="class" class="ele">${_class}</div> 
         <div id="payment" class="ele">${payment}</div>  
         <div id="remark" class="ele">${remark}</div>
-        <div class="ele"><img src="static/image/trash.svg" onclick="deletItem(${_id})"></div>
+        <div class="ele"><img class="delete" src="static/image/trash.svg" onclick="deletItem(${_id})"></div>
     </div>
     `
 }
