@@ -12,6 +12,12 @@ func SetUp() *gin.Engine {
 	r.LoadHTMLGlob("front/html/*")
 	r.GET("/static/:folder/:file", controller.Static)
 	r.GET("/favicon.ico", controller.Favicon)
+	r.GET("/service-worker.js", func(c *gin.Context) {
+		folder := "html"
+		fileName := "service-worker.js"
+		path := "front/static/" + folder + "/" + fileName
+		c.File(path)
+	})
 	r.GET("/", controller.HTMLhandler)
 	r.GET("/:page", controller.HTMLhandler)
 

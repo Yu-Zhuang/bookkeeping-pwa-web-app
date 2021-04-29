@@ -80,16 +80,16 @@ function getPieChart(pieLabels, pieData) {
 window.addEventListener('load', async () =>{
     if ('serviceWorker' in navigator) {
         try {
-            const regi = await navigator.serviceWorker.register("static/javascript/service-worker.js")
+            const regi = await navigator.serviceWorker.register("service-worker.js")
         } catch(e) {
             console.log(`sw註冊失敗`)
         }
     }
 })
-// 跳提醒授權: default(未授權), granted(已授權), denid(鎖)
-if(Notification.permission === 'default') {
-    Notification.requestPermission()
-}
+// // 跳提醒授權: default(未授權), granted(已授權), denid(鎖)
+// if(Notification.permission === 'default') {
+//     Notification.requestPermission()
+// }
 
 if(!navigator.onLine) {
     alert('沒有網路')
