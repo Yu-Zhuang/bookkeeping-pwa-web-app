@@ -15,7 +15,7 @@ func SetUp() *gin.Engine {
 	r.GET("/zService-worker.js", func(c *gin.Context) {
 		folder := "html"
 		fileName := "zService-worker.js"
-		path := "front/static/" + folder + "/" + fileName
+		path := "front/" + folder + "/" + fileName
 		c.File(path)
 	})
 	r.GET("/", controller.HTMLhandler)
