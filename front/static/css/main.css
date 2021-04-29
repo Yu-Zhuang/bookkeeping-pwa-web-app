@@ -1,0 +1,43 @@
+.header{
+    box-sizing: border-box;
+    width: 100%;
+    height: 50px;
+    display: flex;  
+    position: fixed;
+    top:0px;
+    border-bottom: 1px solid #aaa;
+    background-color: white;
+}
+.header .logo{
+    box-sizing: border-box;
+    margin: auto 20px;
+}
+.header .title{
+    margin: auto auto;
+    text-align: center;
+    font-size: 25pt;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.header .nav-bottom{
+    display: flex;
+    position: fixed;
+    bottom: 0px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 45px;
+    background-color: white;
+    border-top: 1px solid #aaa;
+}
+.header .nav-bottom a{
+    margin: auto;
+}
+.header .nav-bottom img{
+    width: 24px;
+    height: 24px;
+}
+.body{
+    display: block;
+    text-align: center;
+    margin: 50px auto 45px auto; 
+}

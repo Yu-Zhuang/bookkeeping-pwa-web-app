@@ -1,0 +1,77 @@
+.label{
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    background-color: #aaa;
+    top: 50px;
+}
+.wrap{
+    margin: 10px auto;
+    display: block;
+    width: 25%;
+    height: 20px;
+    text-align: center;   
+}
+.wrap-big{
+    margin: 10px auto;
+    display: block;
+    width: 30%;
+    height: 20px;
+    text-align: center;   
+}
+.wrap-small{
+    margin: 10px auto;
+    display: block;
+    width: 10%;
+    height: 20px;
+    text-align: center;   
+}
+.container{
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+#record{
+    margin-top: 100px;
+    padding-top: 50px;
+    width: 100%;
+    margin: 0 auto;
+}
+.ele{
+    display: block;
+    width: 25%;
+    height: 30px;
+    text-align: center;
+}
+.ele-big{
+    display: block;
+    width: 30%;
+    height: 30px;
+    text-align: center;
+}
+.ele-small{
+    display: block;
+    width: 10%;
+    height: 30px;
+    text-align: center;
+}
+._element{
+    box-sizing: border-box;
+    display: block;
+    width: 25%;
+    height: 36px;
+    text-align: center;
+    margin: 0 auto;
+}
+button{
+    box-sizing: border-box;
+    display: block;
+    width: 40%;
+    height: 40px;
+    border-radius:10pt;
+    margin: 30px auto;
+}
+.delete{
+    cursor: pointer;
+}
