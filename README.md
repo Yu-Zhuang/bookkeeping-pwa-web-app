@@ -15,6 +15,7 @@
   <kbd><img src="https://github.com/Yu-Zhuang/bookkeeping/blob/main/demoscreen/64978.jpg" width="200"></kbd>
   <kbd><img src="https://github.com/Yu-Zhuang/bookkeeping/blob/main/demoscreen/65165.jpg" width="200"></kbd>
 </p>
+
 * ps. android建議使用chrome加於桌面, ios需使用safari加於桌面.
 
 ## 2. 新增|查看|刪除消費紀錄
@@ -31,5 +32,5 @@
 </p>
 
 --- 
-* ps. 尚未完成: (1)設定目標與計算建議平均每天只能花多少, (3)編輯紀錄, (3)選擇統計數據區間
+* ps. 尚未完成: (1)設定目標與計算建議平均每天只能花多少, ()編輯紀錄, (3)選擇統計數據區間
 
