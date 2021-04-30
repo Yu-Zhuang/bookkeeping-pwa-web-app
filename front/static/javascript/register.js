@@ -1,5 +1,4 @@
-const register = async () => {
-    const data = await getData()
+const actRegister = async (data) => {
     const res = await fetch((hostUrl + 'api/register'), {
         method: 'POST',
         body: data,
@@ -18,7 +17,7 @@ const register = async () => {
     }
     return
 }
-function getData() {
+function register() {
     id = String(document.getElementById("id").value)
     psd = String(document.getElementById("password").value)
     cpsd = String(document.getElementById("checkPassword").value)
@@ -26,12 +25,18 @@ function getData() {
     email = String(document.getElementById("email").value)
 
     if (psd != cpsd) {
-        alert("密碼與確認密碼不符") 
-        window.location.href = hostUrl + "register"            
+        alert("密碼與確認密碼不符")  
+        return          
     }
     if (id == "" || psd== "" || _name == "" || email == "") {
         alert("填寫不完全")
-        window.location.href = hostUrl + "register"  
+        return
+    }
+    if (validateEmail(email)){
+
+    } else {
+        alert("email格式不正確")
+        return
     }
     ret = {
             "id": id,
@@ -39,5 +44,10 @@ function getData() {
             "name": _name,
             "email": email
     }
-    return JSON.stringify(ret)
+    actRegister(JSON.stringify(ret))
 }
+
+function validateEmail(email) {
+    const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+  }
