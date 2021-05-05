@@ -1,4 +1,4 @@
-const CACHE_NAME = "gokeep_cache_v14"
+const CACHE_NAME = "gokeep_cache_v15"
 // 緩存內容
 self.addEventListener('install', async event => {
     console.log('install', event)

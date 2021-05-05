@@ -34,7 +34,7 @@ func SetUp() *gin.Engine {
 		api.GET("/getChartData", controller.Auth, controller.GetChartData)
 		api.GET("/getMonthAverage", controller.Auth, controller.GetMonthAverage)
 		api.GET("/getDayAverage", controller.Auth, controller.GetDayAverage)
-		api.GET("/deletRecord/:_id", controller.Auth, controller.DeletRecord)
+		api.DELETE("/deletRecord/:_id", controller.Auth, controller.DeletRecord)
 	}
 
 	return r

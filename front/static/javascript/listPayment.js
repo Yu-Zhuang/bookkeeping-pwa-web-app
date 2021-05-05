@@ -44,7 +44,7 @@ function deletItem(_id) {
 async function actDelete(_id) {
     let req = "api/deletRecord/" + String(_id)
     const res = await fetch((hostUrl + req), {
-        method: 'GET',
+        method: 'DELETE',
     })
     if (res.status == 200) {
         alert('刪除成功')
