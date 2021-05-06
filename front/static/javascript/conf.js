@@ -27,3 +27,7 @@ window.addEventListener('online', ()=>{
         window.location.href = hostUrl
     } 
 })
+
+function toHome() {
+    window.location.href = hostUrl
+}
