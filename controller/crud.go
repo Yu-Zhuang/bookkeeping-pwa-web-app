@@ -77,7 +77,7 @@ func GetPaymentHistory(c *gin.Context) {
 		"educate":       "育",
 		"entertainment": "樂",
 	}
-	sql_statement := `SELECT id, class, payment, date, remark FROM paymentrecord WHERE personid=$1`
+	sql_statement := `SELECT id, class, payment, date, remark FROM paymentrecord WHERE personid=$1 ORDER BY date DESC`
 	rows, err := dao.PostgresDB.Query(sql_statement, userID)
 	if err != nil {
 		fmt.Println(err.Error())
